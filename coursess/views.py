@@ -1,6 +1,8 @@
+from django.http.response import Http404
 from django.shortcuts import render,get_object_or_404
-from django.http import HttpResponse
 from .models import Course
+
+#from django.views.generic import DetailView
 
 
 def index(request):
@@ -12,10 +14,12 @@ def index(request):
     return render(request, template_name, context)
     
 
-def details(request, pk):
-    course = get_object_or_404(Course, pk=pk)
+def details(request, slug):
+    course = get_object_or_404(Course, slug=slug)
     context = {
         'course': course
     }
     template_name = 'details.html'
     return render(request, template_name, context)
+
+

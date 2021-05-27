@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from .views import index, details
 
 
@@ -6,7 +6,10 @@ app_name = 'courses'
 urlpatterns = [
 
     path('', index, name='index'),
-    path('(?p<slug>[\w-]*)', details, name='details'),
+    re_path(r'^(?P<slug>[\w_-]+)/$',details, name='details'),
+    #path('<slug:slug>/', CourseDetailSlugView.as_view()),
+    #url('^(?P<slug>[\w_-]+)$', details, name='details'),
+    #path('^(?P<slug>[\w_-]+)/$', details, name='details'),
 
    
 
