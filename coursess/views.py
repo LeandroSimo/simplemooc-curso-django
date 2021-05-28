@@ -23,7 +23,7 @@ def details(request, slug):
         form = ContactCourse(request.POST)
         if form.is_valid():
             context['is_valid'] = True
-            print(form.cleaned_data)
+            form.send_email(course)
             form = ContactCourse()
             
     else:
