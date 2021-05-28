@@ -9,7 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls', namespace='core')),
     path('cursos/', include('coursess.urls', namespace='courses')),  
-    path('conta/', include('accounts.urls', namespace='accounts')),  
+    path('conta/', include('accounts.urls', namespace='accounts')), 
+     
 
 
 
