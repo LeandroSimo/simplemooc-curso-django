@@ -9,6 +9,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls', namespace='core')),
     path('cursos/', include('coursess.urls', namespace='courses')),  
+    path('conta/', include('accounts.urls', namespace='accounts')),  
+
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
