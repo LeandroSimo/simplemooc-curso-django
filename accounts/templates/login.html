@@ -1,8 +1,63 @@
+<!doctype html>
 <br>
-{% extends "base.html" %}
+<br>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple MOOC - Uma simples plataforma de ensino a distância" />
+    <title>Simple MOOC</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">SIMPLE MOOC</a>
+        <ul>
+            <li class="pure-menu-selected"><a href="#">Início</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="" title="">Entrar</a></li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <h2>Informe seus dados de cadastro</h2>
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                   
 
-{% block content %}
-<div class="pure-g-r content-ribbon">
+                    <div class="pure-control-group">
+                        <label for="username">Usuário</label>
+                        <input id="username" type="text" />
+                       
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="name">Senha</label>
+                        <input id="name" type="password" />
+                    </div>
+                    <div class="pure-controls">
+                        <button type="submit" class="pure-button pure-button-primary">Entrar</button>
+                    </div>
+                </fieldset>
+                <p>
+                    Não é cadastrado? <a href="{% url 'accounts:register' %}" title="">Cadastre-se</a> <br />
+                    Esqueceu a senha? <a href="" title="">Nova senha</a> <br />
+                </p>
+            </form>
+        </div>
+    </div>
+   
+   
+    
+<!--
+    
+   
+    <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <h2>Informe seus dados de cadastro</h2>
         <form class="pure-form pure-form-stacked">
@@ -29,5 +84,4 @@
             </p>
         </form>
     </div>
-</div>
-{% endblock %}
+</div>-->
