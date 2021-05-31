@@ -8,6 +8,7 @@ from django.views.generic import TemplateView
 
 app_name = 'accounts'
 urlpatterns = [
+    path('', TemplateView.as_view(template_name="dashboard.html"),name='dashboard'),
 
     path('entrar/', TemplateView.as_view(template_name="login.html"),name='login'),
     path('cadastre-se/', register,name='register'),

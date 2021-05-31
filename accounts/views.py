@@ -3,6 +3,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.conf import settings
 from .forms import ResgisterForm
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='/accounts/login/')
+def dashboard(request):
+    template_name = 'dashboard.html'
+    context = {}
+    return render(request, template_name, context)
 
 
 def register(request):

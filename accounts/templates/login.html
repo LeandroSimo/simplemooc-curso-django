@@ -1,7 +1,9 @@
-<!doctype html>
 <br>
 <br>
-<html lang="en">
+
+{% extends "base.html" %}
+
+<!--<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,37 +53,37 @@
             </form>
         </div>
     </div>
-   
+-->
    
     
-<!--
-    
-   
-    <div class="pure-g-r content-ribbon">
+
+
+{% block content %}
+<div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <h2>Informe seus dados de cadastro</h2>
-        <form class="pure-form pure-form-stacked">
-            {%csrf_token%}
+        <form class="pure-form pure-form-stacked" method="post">
+            {% csrf_token %}
             <fieldset>
                 {{ form.non_field_errors }}
-                
+
                 {% for field in form %}
                 <div class="pure-control-group">
-
-                   {{ field.label_tag }}
-                   {{ field }}
-                   {{ field.errors }}
-                   
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
                 </div>
                 {% endfor %}
+
                 <div class="pure-controls">
                     <button type="submit" class="pure-button pure-button-primary">Entrar</button>
                 </div>
             </fieldset>
             <p>
                 Não é cadastrado? <a href="{% url 'accounts:register' %}" title="">Cadastre-se</a> <br />
-                Esqueceu a senha? <a href="" title="">Nova senha</a> <br />
+                Esqueceu a senha? <a href="#" title="">Nova senha</a> <br />
             </p>
         </form>
     </div>
-</div>-->
+</div>
+{% endblock %}
