@@ -48,7 +48,7 @@ ROOT_URLCONF = 'curso.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,7 +129,7 @@ DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
 CONTACT_EMAIL = 'contato@simplemooc.com'
 
 # Auth
-LOGIN_URL = 'accounts:login'
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'core:home'
 LOGOUT_URL = 'accounts:logout'
 #AUTH_USER_MODEL = 'accounts.User'
