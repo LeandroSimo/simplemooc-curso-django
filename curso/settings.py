@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'core',
     'coursess',
     'accounts',
@@ -35,6 +36,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -112,9 +114,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 MEDIA_URL = '/media/'
 
 # E-mails
@@ -129,7 +129,7 @@ DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
 CONTACT_EMAIL = 'contato@simplemooc.com'
 
 # Auth
-LOGIN_URL = 'login'
+LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'accounts:dashboard'
 LOGOUT_REDIRECT_URL = 'core:home'
 #AUTH_USER_MODEL = 'accounts.User'
@@ -138,3 +138,8 @@ LOGOUT_REDIRECT_URL = 'core:home'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]

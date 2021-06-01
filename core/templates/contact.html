@@ -9,10 +9,10 @@
             <li><a href="{% url 'courses:index' %}">Cursos</a></li>
             <li><a href="{% url 'core:contact' %}">Contato</a></li>
             {% if user.is_authenticated %}
-            <li><a href="#">Painel</a></li>
-            <li><a href="{% url 'logout' %}">Sair</a></li>
+            <li><a href="{% url 'accounts:dashboard' %}">Painel</a></li>
+            <li><a href="{% url 'accounts:logout' %}">Sair</a></li>
             {% else %}
-            <li><a href="{% url 'login' %}">Entrar</a></li>
+            <li><a href="{% url 'accounts:login' %}">Entrar</a></li>
             {% endif %}
         </ul>
     </div>
