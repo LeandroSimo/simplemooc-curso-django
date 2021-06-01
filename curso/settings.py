@@ -131,7 +131,7 @@ CONTACT_EMAIL = 'contato@simplemooc.com'
 # Auth
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'core:home'
-LOGOUT_URL = 'accounts:logout'
+LOGOUT_REDIRECT_URL = 'core:home'
 #AUTH_USER_MODEL = 'accounts.User'
 
 # Default primary key field type
