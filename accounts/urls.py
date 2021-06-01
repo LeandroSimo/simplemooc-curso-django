@@ -10,6 +10,7 @@ from . import views
 app_name = 'accounts'
 urlpatterns = [
 
+    re_path('',views.dashboard, name='dashboard'),
     re_path(r'^cadastre-se/$',views.register, name='register'),
     
     
