@@ -33,6 +33,11 @@ def register(request):
     }
     return render(request, template_name, context)
 
+@login_required
+def edit(request):
+    template_name ='edit.html'
+    return render(request, template_name)
+
 #def logout_view(request):
 #    template_name = 'home.html'
 #    logout(request)
