@@ -13,6 +13,7 @@ urlpatterns = [
     re_path(r'^$',views.dashboard, name='dashboard'),
     re_path(r'^cadastre-se/$',views.register, name='register'),
     re_path(r'^editar/$',views.edit, name='edit'),
+    re_path(r'^editar-senha/$',views.edit_password, name='edit_password'),
         
 
     #re_path(r'^sair/$',views.logout_view, name='logout'),
