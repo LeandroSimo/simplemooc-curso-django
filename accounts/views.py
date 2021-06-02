@@ -1,14 +1,19 @@
+from re import T
 from django.contrib.auth import forms
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.conf import settings
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, get_user_model
 from django.contrib.auth.decorators import login_required
-
 #from django.contrib.auth import logout
 
-from .forms import RegisterForm, EditAccountForm
+from core.utils import generate_hash_key
+
+from .forms import RegisterForm, EditAccountForm, PasswordResetForm, User
+from .models import PasswordReset
+
+User = get_user_model()
 
 @login_required
 def dashboard(request):
@@ -33,6 +38,21 @@ def register(request):
       'form': form
     }
     return render(request, template_name, context)
+
+
+def password_reset(request):
+    template_name = 'password_reset.html'
+    context = {}
+    form = PasswordResetForm(request.POST or None)
+    if form.is_valid():
+        user = User.objects.get(email=form.cleaned_data['email'])
+        key = generate_hash_key(user.username)
+        reset = PasswordReset(key=key, user=user)
+        reset.save()
+        context['success'] = True
+    context['form'] = form
+    return render(request, template_name, context)
+
 
 @login_required
 def edit(request):
