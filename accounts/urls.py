@@ -1,3 +1,4 @@
+from re import template
 from django.conf.urls import url
 from django.urls.conf import include, path, re_path
 from django.views.generic import TemplateView
@@ -13,6 +14,7 @@ urlpatterns = [
     re_path(r'^$',views.dashboard, name='dashboard'),
     re_path(r'^cadastre-se/$',views.register, name='register'),
     re_path(r'^nova-senha/$',views.password_reset, name='password_reset'),
+    re_path(r'^confirmar-nova-senha/(?P<key>\w+)/$',auth.PasswordResetView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     re_path(r'^editar/$',views.edit, name='edit'),
     re_path(r'^editar-senha/$',views.edit_password, name='edit_password'),
         

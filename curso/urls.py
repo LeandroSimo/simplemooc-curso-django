@@ -9,7 +9,7 @@ from django.urls.conf import re_path
 urlpatterns = [
     re_path(r'^', include('core.urls', namespace='core')),
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls', namespace='accounts')),
+    path('conta/', include('accounts.urls', namespace='accounts')),
     path('cursos/', include('coursess.urls', namespace='courses')),
     #LOGIN, LOGOUT, PASSWORD:     
 
