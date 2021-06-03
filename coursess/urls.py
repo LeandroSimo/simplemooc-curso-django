@@ -8,6 +8,7 @@ urlpatterns = [
     re_path(r'^$', views.index, name='index'),
     re_path(r'^(?P<slug>[\w_-]+)/$',views.details, name='details'),
     re_path(r'^(?P<slug>[\w_-]+)/inscrição/$',views.enrollment, name='enrollment'),
+    re_path(r'^(?P<slug>[\w_-]+)/cancelar-inscrição/$',views.undo_enrollment, name='undo_enrollment'),
     re_path(r'^(?P<slug>[\w_-]+)/anuncios/$',views.announcements, name='announcements'),
     #path('<slug:slug>/', CourseDetailSlugView.as_view()),
     #url('^(?P<slug>[\w_-]+)$', details, name='details'),

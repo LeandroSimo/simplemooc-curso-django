@@ -151,12 +151,7 @@ form.pure-form-aligned ul.errorlist li {
 .pure-form .pure-control-group {
     margin-bottom: 1em;
 }
-.pure-button {
-    background-color: #1f8dd6;
-    color: white;
-    padding: 0.5em 2em;
-    border-radius: 5px;
-}
+
 
 a.pure-button-primary {
     background: white;
@@ -164,7 +159,33 @@ a.pure-button-primary {
     border-radius: 5px;
     font-size: 120%;
 }
+
+.pure-button{
+    color: black;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
 .button-error {
     background: rgb(202, 60, 60);
-    
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-secondary {
+    background: #1f8dd6;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+    background: rgb(28, 184, 65);
+  
+}
+
+.button-warning {
+    background: rgb(223, 117, 20);
+   
 }
