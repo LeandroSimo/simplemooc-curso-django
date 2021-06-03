@@ -1,4 +1,4 @@
-from re import T, template
+from re import template
 from django.contrib.auth import forms
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 #from django.contrib.auth import logout
 
 from core.utils import generate_hash_key
+from coursess.models import Enrollment
 
 from .forms import RegisterForm, EditAccountForm, PasswordResetForm, User
 from .models import PasswordReset
@@ -19,7 +20,8 @@ User = get_user_model()
 @login_required
 def dashboard(request):
     template_name = 'dashboard.html'
-    return render(request, template_name)
+    context = {}
+    return render(request, template_name, context)
 
 
 
