@@ -88,6 +88,7 @@ class Enrollment(models.Model):
 class Announcement(models.Model):
     course = models.ForeignKey(
         Course,
+        related_name='announcements',
         verbose_name='Curso',
         on_delete=models.CASCADE,
     )
