@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% load courses_tags %}
-
 {% block content %}
+{% load_my_courses user as enrollments %}
+
 <br>
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <ul class="breadcrumb">
             {% block breadcrumb %}
-            <li><a href="{% url 'accounts:dashboard' %}">Meu Painel</a></li>
+            <li><a href="{% url 'accounts:dashboard' %}">Meu Painel
+            </a></li>
             {% endblock %}
         </ul>
     </div>
@@ -17,11 +19,12 @@
                 <li class="pure-menu-heading">
                     Bem-Vindo, {{ user }}
                 </li>
-                {% load_my_courses user as enrollments%}
+
+                {% block menu_options %}
                 <li class="pure-menu-heading">Cursos</li>
-                {% for enrollment in enrollments%}
+                {% for enrollment in enrollments %}
                 <li>
-                    <a href="#">
+                    <a href="{% url 'courses:announcements' enrollment.course.slug %}">
                         <i class="fa fa-book"></i>
                         {{ enrollment.course }}
                     </a>
@@ -42,6 +45,7 @@
                         Editar Senha
                     </a>
                 </li>
+                {% endblock %}
             </ul>
         </div>
     </div>
@@ -56,7 +60,7 @@
                 </h3>
                 {{ enrollment.course.description|linebreaks }}
                 <div class="pure-controls">
-                    <a href="" class="button-secondary pure-button">Acessar</a>
+                    <a href="{% url 'courses:announcements' enrollment.course.slug %}" class="button-secondary pure-button">Acessar</a>
                     <a href="" class="button-error pure-button">Cancelar</a>
                 </div>
             </div>

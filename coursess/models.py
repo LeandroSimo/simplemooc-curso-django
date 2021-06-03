@@ -16,7 +16,7 @@ class CourseManage(models.Manager):
 class Course(models.Model):
     
     name = models.CharField(verbose_name='Nome', max_length=100)
-    slug = models.SlugField('Atalho')
+    slug = models.SlugField('Atalho', unique=True)
     description = models.TextField('Descrição Simples', blank=True)
     about = models.TextField('Sobre o Curso', blank=True)
     start_date = models.DateField(
@@ -74,6 +74,9 @@ class Enrollment(models.Model):
     def active(self):
         self.status = 1
         self.save()
+
+    def is_approved(self):
+        return self.status == 1
 
     class Meta:
         verbose_name = 'Inscrição'

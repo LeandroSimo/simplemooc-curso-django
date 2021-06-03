@@ -1,8 +1,5 @@
 from django.template import Library
-from django import template 
-
-
-register = template.Library()
+register = Library()
 from coursess.models import Enrollment
 
 
@@ -16,4 +13,5 @@ def my_courses(user):
 
 @register.simple_tag
 def load_my_courses(user):
+    print("ssss")
     return Enrollment.objects.filter(user=user)
