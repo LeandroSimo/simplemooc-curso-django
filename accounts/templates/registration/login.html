@@ -2,7 +2,7 @@
 {% block content %}
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
-        <h2>Informe seus dados de cadastro</h2>
+        <h2 class="titles">Informe seus dados de cadastro</h2>
         <form class="pure-form pure-form-aligned " method="post">
             {% csrf_token %}
             <fieldset>
@@ -16,14 +16,16 @@
                 
                 {% endfor %}
 
-                <div class="pure-controls">
+                <div class="button-login">
                     <button type="submit" class="button-secondary pure-button">Entrar</button>
                 </div>
             </fieldset>
+          <div class="titles">
             <p>
-                Não é cadastrado? <a href="{% url 'accounts:register' %}" title="">Cadastre-se</a> <br />
-                Esqueceu a senha? <a href="{% url 'accounts:password_reset' %}" title="">Nova senha</a> <br />
+                Não é cadastrado? <a class="titles" href="{% url 'accounts:register' %}" title="">Cadastre-se</a> <br />
+                Esqueceu a senha? <a class="titles" href="{% url 'accounts:password_reset' %}" title="">Nova senha</a> <br />
             </p>
+          </div>
         </form>
     </div>
 </div>

@@ -4,11 +4,13 @@
 {% for announcement in announcements %}
 <div class="well">
     <h2>
-        <a href="{% url 'courses:show_announcements' course.slug announcement.pk %}">{{ announcement.title }}</a>
+        <a class="titles" href="{% url 'courses:show_announcement' course.slug announcement.pk %}">{{ announcement.title }}</a>
     </h2>
+    <div class="titles">
     {{ announcement.content|linebreaks }}
+    </div>
     <p>
-        <a href="{% url 'courses:show_announcements' course.slug announcement.pk %}#comments">
+        <a class="titles" href="{% url 'courses:show_announcement' course.slug announcement.pk %}#comments">
         <i class="fa fa-comments-o"></i>
         {% with comments_count=announcement.comments.count %}
         {{ comments_count }}

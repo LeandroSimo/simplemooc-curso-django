@@ -137,6 +137,11 @@ form.pure-form-aligned ul.errorlist li {
     font-weight: bold;
     font-size: 100%;
 }
+
+.pure-form-stacked{
+    margin-left: 30px;
+}
+
 .pure-form input[type], textarea, select {
     border: 2px solid #ddd;
     box-shadow: none;
@@ -144,6 +149,7 @@ form.pure-form-aligned ul.errorlist li {
     width: 100%;
     max-width: 350px;
     margin-bottom: 0.3em;
+    
 }
 .pure-form textarea {
     max-width: 450px;
@@ -152,6 +158,47 @@ form.pure-form-aligned ul.errorlist li {
     margin-bottom: 1em;
 }
 
+.pure-u-1{
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 0.3em; 
+  
+}
+.well{
+    border: 2px solid #ddd;
+    font-size: 100%;
+    width: 98%;
+    margin-bottom: 10px; 
+    margin-left: 20px;    
+}
+
+.fright{
+    margin-left: 550px;  
+}
+
+.comments{
+    margin-left: 30px;  
+}
+
+.notify{
+    margin-left: 50px;
+}
+
+.titles{
+    margin-left: 10px;
+}
+
+.pure-controls{
+    margin-bottom: 10px;
+}
+.new_class{
+    margin-top: 20px;
+}
+.my_cursos_menu_dashboard{
+    margin-left: 25px;
+}
 
 a.pure-button-primary {
     background: white;
@@ -160,10 +207,19 @@ a.pure-button-primary {
     font-size: 120%;
 }
 
+.button-enviar-datails{
+    margin-left: 170px;
+}
+.button-login{
+    margin-top: 15px;
+    margin-left: 170px;
+}
+
 .pure-button{
     color: black;
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
 }
 
 .button-error {

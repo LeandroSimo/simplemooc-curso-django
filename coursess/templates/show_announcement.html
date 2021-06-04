@@ -2,25 +2,27 @@
 
 {% block breadcrumb %}
     {{ block.super }}
-    <li>/</li>
-    <li><a href="{% url 'courses:show_announcements' course.slug announcements.pk %}">{{ announcement }}</a></li>
+    
+   <a class="titles" href="{% url 'courses:show_announcement' course.slug announcement.pk %}"> {{ announcement }}</a>
 {% endblock %}
 
 {% block dashboard_content %}
     <div class="well">
-        <h2>{{ announcement.title }}</h2>
-        {{ announcement.content|linebreaks }}
+        <h2  class="titles">{{ announcement.title }}</h2>
+        <div class="titles"> {{ announcement.content|linebreaks }}</div>
     </div>
     <div class="well">
-        <h4 id="comments">Comentários
+        <h4 class="comments" id="comments">Comentários:
         <a class="fright" href="#add_comment">Comentar</a></h4>
-        <hr />
-        {% for comment in announcements.comments.all %}
+        <hr>
+        {% for comment in announcement.comments.all %}
+        <div class="titles">
         <p>
-            <strong>{{ comment.user }}</strong> disse à {{ comment.created_at|timesince }} atrás: <br />
+            <strong>{{ comment.user }}:</strong> disse à {{ comment.created_at|timesince }} atrás: <br />
             {{ comment.comment|linebreaksbr }}
         </p>
-        <hr>
+        </div>
+        </hr>
         {% empty %}
         <p>
             Nenhum comentário para este anúncio.

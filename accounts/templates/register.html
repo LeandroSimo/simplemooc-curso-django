@@ -3,7 +3,7 @@
 {% block content %}
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
-        <h2>Informe seus dados</h2>
+        <h2 class="titles">Informe seus dados</h2>
         <form class="pure-form  pure-form-aligned" method="post">
             {% csrf_token %}
             <fieldset>
@@ -17,8 +17,8 @@
                 </div>
                 {% endfor %}
 
-                <div class="pure-controls">
-                    <button type="submit" class="pure-button pure-button-primary">Cadastrar</button>
+                <div class="button-login">
+                    <button type="submit" class="pure-button button-secondary">Cadastrar</button>
                 </div>
             </fieldset>
         </form>

@@ -34,16 +34,16 @@
             {% else %}
             <img src="{% static 'img/course-image.png' %}" alt="" />
             {% endif %}
-            <h4>Dúvidas?</h4>
+            <h4 class="titles">Dúvidas?</h4>
             <p>
-                <a href="#contato" title="" class="pure-button">Fale Conosco</a>
+                <a href="#contato" title="" class="pure-button button-secondary">Fale Conosco</a>
             </p>
         </div>
     </div>
 </div>
 <div class="pure-g-r content-ribbon" id="contato">
     <div class="pure-u-1">
-        <h3>Tire sua dúvida sobre o Curso</h3>
+        <h3 class="titles">Tire sua dúvida sobre o Curso</h3>
         {% if is_valid %}
         <p>Você enviou o formulário com sucesso</p>
         {% endif %}
@@ -63,8 +63,8 @@
                     {% endif %}
                 </div>
                 {% endfor %}
-                <div class="pure-controls">
-                    <button type="submit" class="pure-button pure-button-primary">Enviar</button>
+                <div class="button-enviar-datails">
+                    <button type="submit" class=" pure-button button-secondary">Enviar</button>
                 </div>
             </fieldset>
         </form>
