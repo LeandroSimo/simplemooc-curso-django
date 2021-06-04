@@ -13,5 +13,4 @@ def my_courses(user):
 
 @register.simple_tag
 def load_my_courses(user):
-    print("ssss")
     return Enrollment.objects.filter(user=user)
