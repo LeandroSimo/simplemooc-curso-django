@@ -1,8 +1,10 @@
 from django import forms
+from django.db.models.query import ValuesIterable
 from django.shortcuts import redirect, render,get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Course, Enrollment
+from django.template.defaultfilters import escapejs_filter
+from .models import Course, Enrollment, Announcement
 from  .forms import ContactCourse
 
 
@@ -82,5 +84,25 @@ def announcements(request,slug):
     context = {
         'course': course,
         'announcements': course.announcements.all()
+    }
+    return render(request, template_name, context )
+
+@login_required
+def show_announcements(request, slug, pk):
+
+    course = get_object_or_404(Course, slug=slug)
+    if not request.user.is_staff:
+        enrollment = get_object_or_404(
+            Enrollment, user=request.user, course=course
+        )
+        if not enrollment.is_approved():
+            messages.error(request, 'Inscrição pendente')
+        return redirect('accounts:dashboard')
+    template_name = 'show_announcement.html'
+    announcement = get_object_or_404(course.announcements.all(), pk=pk)
+    context = {
+        'course': course,
+        'announcements': announcement,
+      
     }
     return render(request, template_name, context)
