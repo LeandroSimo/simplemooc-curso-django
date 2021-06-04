@@ -21,7 +21,7 @@ Para clonar e executar essa aplicação você precisará do [Git](https://git-sc
 
 ```bash
 # Clone esse repositório
-$ github.com/LeandroSimo/curso-django.git
+$ git clone https://github.com/LeandroSimo/curso-django.git
 
 # Entre no repositório
 $ cd curso-django/
