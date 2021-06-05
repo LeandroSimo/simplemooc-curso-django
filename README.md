@@ -57,6 +57,10 @@ $ python manage.py runserver
 ```
 ### PS.: Atentem-se em instalar as dependências no arquivo [requirements.txt][requeriments]
 
+```
+pip install -r requirements.txt
+```
+
 [python]: https://www.python.org/downloads/
 [django]:https://www.djangoproject.com/download/
 [requeriments]: https://github.com/LeandroSimo/curso-django/blob/main/requirements.txt
