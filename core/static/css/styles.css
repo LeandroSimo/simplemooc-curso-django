@@ -166,6 +166,12 @@ form.pure-form-aligned ul.errorlist li {
     margin-bottom: 0.3em; 
   
 }
+
+.stretch{
+    width:95%;
+    margin-left: 17px;
+  }
+
 .well{
     border: 2px solid #ddd;
     font-size: 100%;

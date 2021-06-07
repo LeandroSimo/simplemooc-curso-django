@@ -13,6 +13,7 @@ urlpatterns = [
     re_path(r'^(?P<slug>[\w_-]+)/anuncios/(?P<pk>\d+)/$',views.show_announcements, name='show_announcement'),
     re_path(r'^(?P<slug>[\w_-]+)/aulas/$',views.lessons, name='lessons'),
     re_path(r'^(?P<slug>[\w_-]+)/aula/(?P<pk>\d+)/$',views.lesson, name='lesson'),
+    re_path(r'^(?P<slug>[\w_-]+)/materiais/(?P<pk>\d+)/$',views.material, name='material'),
     #path('<slug:slug>/', CourseDetailSlugView.as_view()),
     #url('^(?P<slug>[\w_-]+)$', details, name='details'),
     #path('^(?P<slug>[\w_-]+)/$', details, name='details'),
