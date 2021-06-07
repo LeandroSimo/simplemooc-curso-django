@@ -1,12 +1,13 @@
-pip install Django
-pip install Pillow
-pip install dj-database-url
-pip install dj-static
-pip install django-toolbelt
-pip install gunicorn
-pip install mock
-pip install model-mommy
-pip install psycopg
-pip install pystache
-pip install six
-pip install static
+Django
+Pillow
+dj-database-url
+dj-static
+django-toolbelt
+gunicorn
+mock
+model-mommy
+pystache
+six
+static
+debug_toolbar
+psycopg2
