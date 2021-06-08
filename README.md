@@ -55,10 +55,13 @@ $ python manage.py runserver
 
 
 ```
-### PS.: Atentem-se em instalar as dependências no arquivo [requirements.txt][requeriments]
+### PS.: Atentem-se em instalar as dependências no arquivo [requirements.txt][requeriments] e criar o Banco de Dados com o superuser
 
 ```
 pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
 ```
 
 [python]: https://www.python.org/downloads/
