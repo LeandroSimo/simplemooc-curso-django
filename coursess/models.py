@@ -201,9 +201,11 @@ def post_save_announcement(instance, created, **kwargs):
         enrollments = Enrollment.objects.filter(
             course=instance.course, status=1
         )
+        recipient_list = []
         for enrollment in enrollments:
             recipient_list = [enrollment.user.email]
         send_mail_template(subject, template_name, context, recipient_list)
+        
 
 models.signals.post_save.connect(
     post_save_announcement, sender=Announcement, dispatch_uid='post_save_announcement'

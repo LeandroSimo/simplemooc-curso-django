@@ -28,11 +28,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #libs
+    'taggit',
     'debug_toolbar',
+    #apps
     'core',
-    'coursess',
     'accounts',
+    'coursess',
+    'forum',   
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

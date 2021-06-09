@@ -1,4 +1,3 @@
-
 from django.contrib import admin 
 from django.urls import path,include 
 from django.conf import settings
@@ -11,7 +10,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('conta/', include('accounts.urls', namespace='accounts')),
     path('cursos/', include('coursess.urls', namespace='courses')),
-    #LOGIN, LOGOUT, PASSWORD:     
+    path('forum/', include('forum.urls', namespace='forum')),
+        
 
 ] 
 

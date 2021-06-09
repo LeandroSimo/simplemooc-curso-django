@@ -181,7 +181,7 @@ form.pure-form-aligned ul.errorlist li {
 }
 
 .fright{
-    margin-left: 550px;  
+    margin-left: 450px;  
 }
 
 .comments{
@@ -243,6 +243,7 @@ a.pure-button-primary {
 }
 
 .button-success {
+    color: white;
     background: rgb(28, 184, 65);
   
 }
@@ -251,3 +252,15 @@ a.pure-button-primary {
     background: rgb(223, 117, 20);
    
 }
+.responde{
+    margin-left: 615px;
+}
+.autor{
+    margin-left: 580px;
+}
+.label {
+    color: white;
+    padding: 8px;
+    border-radius: 15px;
+  }
+.success {background-color: #04AA6D;}
