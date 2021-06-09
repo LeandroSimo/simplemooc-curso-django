@@ -47,11 +47,10 @@ $ activate
 source env/bin/activate
 
 # Instale o Django 
-$ pip install Django
+$ pip install Django==3.2.4
 
 # Execute
-$ cd curso
-$ python manage.py runserver
+$ python manage.py runserver ou python manage.py runserver 0.0.0.0:8000
 
 
 ```
