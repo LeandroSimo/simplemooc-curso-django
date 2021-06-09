@@ -1,6 +1,6 @@
 from django.template import Library
 register = Library()
-from coursess.models import Enrollment
+from courses.models import Enrollment
 
 
 @register.inclusion_tag('templatetags/my_courses.html')

@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     #apps
     'core',
     'accounts',
-    'coursess',
+    'courses',
     'forum',   
 ]
 

@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 #from django.contrib.auth import logout
 
 from core.utils import generate_hash_key
-from coursess.models import Enrollment
+from courses.models import Enrollment
 
 from .forms import RegisterForm, EditAccountForm, PasswordResetForm, User
 from .models import PasswordReset

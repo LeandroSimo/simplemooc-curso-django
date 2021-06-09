@@ -6,17 +6,17 @@ from django.conf import settings
 
 from model_mommy import mommy
 
-from coursess.models import Course
+from courses.models import Course
 
 
 class CourseManagerTestCase(TestCase):
 
     def setUp(self):
         self.courses_django = mommy.make(
-            'coursess.Course', name='Python na Web com Django', _quantity=5
+            'courses.Course', name='Python na Web com Django', _quantity=5
         )
         self.courses_dev = mommy.make(
-            'coursess.Course', name='Python para Devs', _quantity=10
+            'courses.Course', name='Python para Devs', _quantity=10
         )
         self.client = Client()
 
